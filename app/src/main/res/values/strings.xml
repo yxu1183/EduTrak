@@ -1,3 +1,9 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">EduTrak</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="edutrak">eduTrak</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="sign_up">Sign Up</string>
 </resources>
