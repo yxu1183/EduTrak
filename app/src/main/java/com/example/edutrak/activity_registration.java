@@ -38,7 +38,7 @@ public class activity_registration extends AppCompatActivity {
                     "(?=.*[a-z])" +  //atleast 1 lowercase
                     "(?=.*[A-Z])" +  //atleast 1 uppercase
                     "(?=.*[a-zA-Z])" + //anyletter
-                    "(?=.*[@#$%^&+=])" + //atleast 1 special character
+                    "(?=.*[!*@#$%^&+=])" + //atleast 1 special character
                     "(?=\\S+$)" + //no white spaces
                     ".{4,}" + //atleast 4 characters
                     "$");
@@ -217,5 +217,6 @@ public class activity_registration extends AppCompatActivity {
                 Toast.makeText(activity_registration.this,"",Toast.LENGTH_LONG).show();
             }
         });
+
     }
 }
