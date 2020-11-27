@@ -16,4 +16,5 @@
     <string name="next">Next</string>
     <string name="don_t_have_an_account">Don\'t have an account?</string>
     <string name="upload_picture">Upload Picture</string>
+    <string name="other">Other</string>
 </resources>

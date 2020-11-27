@@ -74,10 +74,5 @@ public class MainActivity extends AppCompatActivity {
         {
             return;
         }
-
-        String input_message = "Username: " + textinputusername.getEditText().getText().toString();
-        input_message += "\n";
-        input_message += "Password: " + textinputusername.getEditText().getText().toString();
-        Toast.makeText(this, input_message, Toast.LENGTH_SHORT).show();
     }
 }
