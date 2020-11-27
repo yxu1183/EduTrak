@@ -204,7 +204,7 @@ public class activity_registration extends AppCompatActivity {
 
     public void validateinput(View v)
     {
-        if(!usernamevalidate() | !passwordvalidate() | !emailvalidate())
+        if (!usernamevalidate() | !passwordvalidate() | !emailvalidate())
         {
             return;
         }

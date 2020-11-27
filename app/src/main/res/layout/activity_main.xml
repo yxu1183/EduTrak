@@ -53,7 +53,8 @@
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_baseline_account_circle_24"
             android:hint="@string/username"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:drawableLeft="@drawable/ic_baseline_account_circle_24" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -74,7 +75,8 @@
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/ic_baseline_lock_24"
             android:hint="@string/password"
-            android:inputType="text|textPassword" />
+            android:inputType="text|textPassword"
+            android:drawableLeft="@drawable/ic_baseline_lock_24" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -86,8 +88,8 @@
         android:layout_marginEnd="80dp"
         android:layout_marginRight="80dp"
         android:background="@drawable/roundbutton"
-        android:onClick="inputconfirm"
         android:text="@string/login"
+        android:onClick="inputconfirm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
