@@ -109,15 +109,9 @@ public class activity_registration_next extends AppCompatActivity {
         {
             return;
         }
-        register_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
                 Toast.makeText(activity_registration_next.this,"Registration Complete!",Toast.LENGTH_LONG).show();
                 Intent intent =new Intent(activity_registration_next.this,activity_homepage.class);
                 startActivity(intent);
-            }
-        });
-
     }
 
 }

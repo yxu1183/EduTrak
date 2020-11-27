@@ -209,14 +209,11 @@ public class activity_registration extends AppCompatActivity {
             return;
         }
 
-        next_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+
                 Intent intent = new Intent(activity_registration.this,activity_registration_next.class);
                 startActivity(intent);
                 Toast.makeText(activity_registration.this,"",Toast.LENGTH_LONG).show();
-            }
-        });
-
     }
+
 }
+

@@ -40,7 +40,8 @@ public class MainActivity extends AppCompatActivity {
         ClickableSpan clickableSpan = new ClickableSpan() {
             @Override
             public void onClick(@NonNull View widget) {
-                Intent intent = new Intent(MainActivity.this, activity_registration_next.class);
+                Intent intent = new Intent(MainActivity.this, activity_registration
+                        .class);
                 startActivity(intent);
                 Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
             }
