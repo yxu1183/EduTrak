@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, activity_homepage.class);
                     startActivity(intent);
                     Toast.makeText(MainActivity.this, "", Toast.LENGTH_LONG).show();
-                }
         }
     }
+}
 
