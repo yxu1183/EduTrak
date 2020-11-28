@@ -22,4 +22,6 @@
     <string name="classsification_optional">Classsification (Optional)</string>
     <string name="middle_initial_optional">Middle Initial (Optional)</string>
     <string name="register">Register</string>
+    <string name="forgot_password2">Forgot Password</string>
+    <string name="submit">Submit</string>
 </resources>
