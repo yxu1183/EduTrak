@@ -18,6 +18,7 @@ public class activity_registration_next extends AppCompatActivity {
     public TextInputLayout firstname;
     public TextInputLayout lastname;
     public TextInputLayout phone_num;
+    public TextInputLayout middle_init;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class activity_registration_next extends AppCompatActivity {
         firstname = findViewById(R.id.firstname_layout);
         lastname = findViewById(R.id.lastname_layout);
         phone_num = findViewById(R.id.phone_layout);
+        middle_init = findViewById(R.id.midddle_layout);
 
         cancl_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +59,19 @@ public class activity_registration_next extends AppCompatActivity {
         else
         {
             firstname.setError(null);
+            return true;
+        }
+    }
+
+    private boolean validatemiddleinitial() {
+        String middle = middle_init.getEditText().getText().toString().trim();
+
+        if (!middle.isEmpty() && middle.length() > 1) {
+                middle_init.setError("Middle Initial too long.");
+                return false;
+        }
+        else {
+            middle_init.setError(null);
             return true;
         }
     }
@@ -105,7 +120,7 @@ public class activity_registration_next extends AppCompatActivity {
 
     public void validaationInput(View v)
     {
-        if(!validatefirstname() | !validatelastname() | !validatephonenumber())
+        if(!validatefirstname() | !validatelastname() | !validatephonenumber() | !validatemiddleinitial())
         {
             return;
         }
