@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "659903383809",
+    "firebase_url": "https://edutrak-87216.firebaseio.com",
+    "project_id": "edutrak-87216",
+    "storage_bucket": "edutrak-87216.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:659903383809:android:02d99fed466ce683a77300",
+        "android_client_info": {
+          "package_name": "com.example.edutrak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "659903383809-r3aj02ba1ckc7dat63ptubsggukv94c9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHFFOWmsB4ztVAvuTuzlyRp_peagWrUrg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "659903383809-r3aj02ba1ckc7dat63ptubsggukv94c9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

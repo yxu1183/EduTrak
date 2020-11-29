@@ -25,7 +25,8 @@
             android:drawableStart="@drawable/ic_baseline_account_circle_24"
             android:drawablePadding="@dimen/my_value"
             android:hint="@string/first_name"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:drawableLeft="@drawable/ic_baseline_account_circle_24" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -46,7 +47,8 @@
             android:drawableStart="@drawable/ic_baseline_account_circle_24"
             android:drawablePadding="@dimen/my_value"
             android:hint="@string/last_name"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:drawableLeft="@drawable/ic_baseline_account_circle_24" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -68,7 +70,8 @@
             android:drawablePadding="@dimen/my_value"
             android:hint="@string/phone_number"
             android:inputType="phone"
-            tools:textSize="20sp" />
+            tools:textSize="20sp"
+            android:drawableLeft="@drawable/ic_baseline_local_phone_24" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -89,7 +92,8 @@
             android:drawableStart="@drawable/ic_baseline_school_24"
             android:drawablePadding="@dimen/my_value"
             android:hint="@string/university_optional"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:drawableLeft="@drawable/ic_baseline_school_24" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -110,7 +114,8 @@
             android:drawableStart="@drawable/ic_baseline_category_24"
             android:drawablePadding="@dimen/my_value"
             android:hint="@string/classsification_optional"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:drawableLeft="@drawable/ic_baseline_category_24" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -131,7 +136,8 @@
             android:drawableStart="@drawable/ic_baseline_account_circle_24"
             android:drawablePadding="@dimen/my_value"
             android:hint="@string/middle_initial_optional"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:drawableLeft="@drawable/ic_baseline_account_circle_24" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

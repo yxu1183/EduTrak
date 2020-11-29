@@ -21,10 +21,13 @@ import android.widget.Toast;
 import android.os.Bundle;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.regex.Pattern;
 
 public class activity_registration extends AppCompatActivity {
+
     public Button picture_button;
     public ImageView picture_view;
     public Button cancel_button;
@@ -81,6 +84,7 @@ public class activity_registration extends AppCompatActivity {
         });
 
            next_button = (Button)findViewById(R.id.next_btn);
+
     }
     private void storagePermissionRequest()
         {
@@ -208,11 +212,17 @@ public class activity_registration extends AppCompatActivity {
         {
             return;
         }
-
-
-                Intent intent = new Intent(activity_registration.this,activity_registration_next.class);
-                startActivity(intent);
-                Toast.makeText(activity_registration.this,"",Toast.LENGTH_LONG).show();
+        String username = signup_username.getEditText().getText().toString().trim();
+        String email = signup_email.getEditText().getText().toString().trim();
+        String password = signup_password.getEditText().getText().toString().trim();
+        Bundle bundle = new Bundle();
+        bundle.putString("username",username);
+        bundle.putString("email",email);
+        bundle.putString("password",password);
+        Intent intent = new Intent(activity_registration.this,activity_registration_next.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
+        Toast.makeText(activity_registration.this,"",Toast.LENGTH_LONG).show();
     }
 
 }

@@ -10,15 +10,20 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class activity_registration_next extends AppCompatActivity {
-
+    DatabaseReference reff;
+    Users user;
     public Button cancl_button;
     public Button register_button;
     public TextInputLayout firstname;
     public TextInputLayout lastname;
     public TextInputLayout phone_num;
     public TextInputLayout middle_init;
+    public TextInputLayout university;
+    public TextInputLayout classification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +36,11 @@ public class activity_registration_next extends AppCompatActivity {
         lastname = findViewById(R.id.lastname_layout);
         phone_num = findViewById(R.id.phone_layout);
         middle_init = findViewById(R.id.midddle_layout);
+        university = findViewById(R.id.university_layout);
+        classification = findViewById(R.id.category_layout);
+
+        user = new Users();
+        reff = FirebaseDatabase.getInstance().getReference().child("Users");
 
         cancl_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,7 +50,9 @@ public class activity_registration_next extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
     }
+
 
     private boolean validatefirstname()
     {
@@ -124,9 +136,39 @@ public class activity_registration_next extends AppCompatActivity {
         {
             return;
         }
-                Toast.makeText(activity_registration_next.this,"Registration Complete!",Toast.LENGTH_LONG).show();
-                Intent intent =new Intent(activity_registration_next.this,activity_homepage.class);
-                startActivity(intent);
+            String username = "";
+            String password = "";
+            String email = "";
+
+            Bundle bundle = getIntent().getExtras();
+            if (bundle!=null){
+                username = bundle.getString("username");
+                password = bundle.getString("email");
+                email = bundle.getString("password");
+            }
+
+            String first_name = firstname.getEditText().getText().toString().trim();
+            String middle = middle_init.getEditText().getText().toString().trim();
+            String last_name = lastname.getEditText().getText().toString().trim();
+            String phone = phone_num.getEditText().getText().toString().trim();
+            String university_value =university.getEditText().getText().toString().trim();
+            String category =classification.getEditText().getText().toString().trim();
+
+
+            user.setUsername(username);
+            user.setPassword(password);
+            user.setEmail(email);
+            user.setFirst_name(first_name);
+            user.setMiddle_init(middle);
+            user.setLast_name(last_name);
+            user.setPhone_num(phone);
+            user.setUniversity(university_value);
+            user.setClassification(category);
+            reff.push().setValue(user);
+            
+            Toast.makeText(activity_registration_next.this,"Registration Complete!",Toast.LENGTH_LONG).show();
+            Intent intent =new Intent(activity_registration_next.this,activity_homepage.class);
+            startActivity(intent);
     }
 
 }
