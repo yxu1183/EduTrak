@@ -10,7 +10,6 @@ import androidx.core.content.ContextCompat;
 import android.Manifest;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.widget.Button;
@@ -20,11 +19,8 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-import android.os.Bundle;
 
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.regex.Pattern;
 
@@ -58,7 +54,7 @@ public class activity_registration extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-        signup_username = findViewById(R.id.username_layout);
+        signup_username = findViewById(R.id.loginemail_layout);
         signup_email = findViewById(R.id.email_layout);
         signup_password = findViewById(R.id.password_layout);
 
@@ -88,39 +84,39 @@ public class activity_registration extends AppCompatActivity {
             }
         });
 
-           next_button = (Button)findViewById(R.id.next_btn);
-           radiogroup = (RadioGroup) findViewById(R.id.radioGroup);
+        next_button = (Button)findViewById(R.id.next_btn);
+        radiogroup = (RadioGroup) findViewById(R.id.radioGroup);
     }
     private void storagePermissionRequest()
+    {
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                Manifest.permission.READ_EXTERNAL_STORAGE))
         {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                    Manifest.permission.READ_EXTERNAL_STORAGE))
-            {
-                new AlertDialog.Builder(this)
-                        .setTitle("Permission Required")
-                        .setMessage("This permission is required to access media and files.")
-                        .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                ActivityCompat.requestPermissions(activity_registration.this,
-                                        new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSION_CODE);
-                            }
-                        })
-                        .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        })
-                        .create().show();
-            }
-            else
-                {
-                ActivityCompat.requestPermissions(this,
-                        new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSION_CODE);
-            }
-
+            new AlertDialog.Builder(this)
+                    .setTitle("Permission Required")
+                    .setMessage("This permission is required to access media and files.")
+                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            ActivityCompat.requestPermissions(activity_registration.this,
+                                    new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSION_CODE);
+                        }
+                    })
+                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.dismiss();
+                        }
+                    })
+                    .create().show();
         }
+        else
+        {
+            ActivityCompat.requestPermissions(this,
+                    new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSION_CODE);
+        }
+
+    }
 
     private void pickImageFromGallery()
     {
@@ -236,6 +232,4 @@ public class activity_registration extends AppCompatActivity {
         startActivity(intent);
         Toast.makeText(activity_registration.this,"",Toast.LENGTH_LONG).show();
     }
-
 }
-
