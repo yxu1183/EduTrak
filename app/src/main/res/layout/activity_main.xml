@@ -37,7 +37,7 @@
         app:layout_constraintTop_toTopOf="@+id/image_mainapp" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/username_layout"
+        android:id="@+id/loginemail_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -48,13 +48,14 @@
         app:layout_constraintVertical_bias="0.547">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textedit_username"
+            android:id="@+id/textedit_emailinput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_baseline_account_circle_24"
-            android:drawableLeft="@drawable/ic_baseline_account_circle_24"
+            android:drawableStart="@drawable/ic_baseline_email_24"
+            android:drawableLeft="@drawable/ic_baseline_email_24"
             android:drawablePadding="@dimen/my_value"
-            android:hint="@string/username"
+            android:hint="@string/email"
+            android:inputType="text|textEmailAddress"
             android:textSize="20sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -118,15 +119,15 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="34dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="112dp"
+        android:layout_marginTop="565dp"
+        android:layout_marginBottom="50dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_login">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/editview_noaccount"
@@ -154,4 +155,3 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

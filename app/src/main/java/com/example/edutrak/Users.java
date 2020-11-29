@@ -11,6 +11,15 @@ public class Users {
     private String university;
     private String classification;
     private String gender;
+    private String Imageid;
+
+    public String getImageid() {
+        return Imageid;
+    }
+
+    public void setImageid(String imageid) {
+        Imageid = imageid;
+    }
 
     public String getGender() {
         return gender;

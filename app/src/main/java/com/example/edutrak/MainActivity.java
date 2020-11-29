@@ -10,20 +10,26 @@ import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
+import android.util.Patterns;
 import android.widget.TextView;
 import android.widget.Button;
 import android.content.Intent;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
+    FirebaseAuth fAuth;
     public TextView textview;
     public TextView forgot_paswword;
     public Button loginbtn;
-    private TextInputLayout textinputusername;
+    private TextInputLayout textemail;
     private TextInputLayout textinputpassword;
 
     @Override
@@ -31,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textinputusername = findViewById(R.id.username_layout);
+        textemail = findViewById(R.id.loginemail_layout);
         textinputpassword = findViewById(R.id.password_layout);
 
         textview = (TextView) findViewById(R.id.ediview_signup);
@@ -79,18 +85,21 @@ public class MainActivity extends AppCompatActivity {
         forgot_paswword.setMovementMethod(LinkMovementMethod.getInstance());
 
         loginbtn = (Button) findViewById(R.id.button_login);
+
+        fAuth = FirebaseAuth.getInstance();
     }
 
-    private boolean validateUserName() {
-        String input_username = textinputusername.getEditText().getText().toString().trim();
+    private boolean validateEmail() {
+        String input_email = textemail.getEditText().getText().toString().trim();
 
-        System.out.printf("gfhghgfhfgh.....%s, ", input_username);
-
-        if (input_username.isEmpty()) {
-            textinputusername.setError("Username cannot be empty.");
+        if (input_email.isEmpty()) {
+            textemail.setError("Email cannot be empty.");
+            return false;
+        } else if (!Patterns.EMAIL_ADDRESS.matcher(input_email).matches()) {
+            textemail.setError("Please enter a valid email address");
             return false;
         } else {
-            textinputusername.setError(null);
+            textemail.setError(null);
             return true;
         }
     }
@@ -108,14 +117,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void inputconfirm(View v) {
-        if (!validateUserName() | !validatePassword()) {
+        if (!validateEmail() | !validatePassword()) {
             return;
-        }
-        else {
-            Intent intent = new Intent(MainActivity.this, activity_homepage.class);
-                    startActivity(intent);
-                    Toast.makeText(MainActivity.this, "", Toast.LENGTH_LONG).show();
+        } else {
+            String input_email = textemail.getEditText().getText().toString().trim();
+            String input_password = textinputpassword.getEditText().getText().toString().trim();
+                fAuth.signInWithEmailAndPassword(input_email,input_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful())
+                        {
+                            Intent intent = new Intent(MainActivity.this, activity_homepage.class);
+                            startActivity(intent);
+                            Toast.makeText(MainActivity.this, "Login Successful.", Toast.LENGTH_LONG).show();
+                        }
+                        else
+                            Toast.makeText(MainActivity.this, "Error!"+task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                });
+
+            }
         }
     }
-}
+
 
