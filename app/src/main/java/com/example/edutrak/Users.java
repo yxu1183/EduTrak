@@ -10,6 +10,15 @@ public class Users {
     private String phone_num;
     private String university;
     private String classification;
+    private String gender;
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
     public String getUsername() {
         return username;

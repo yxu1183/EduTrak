@@ -139,12 +139,14 @@ public class activity_registration_next extends AppCompatActivity {
             String username = "";
             String password = "";
             String email = "";
+            String gender = "";
 
             Bundle bundle = getIntent().getExtras();
             if (bundle!=null){
                 username = bundle.getString("username");
                 password = bundle.getString("email");
                 email = bundle.getString("password");
+                gender = bundle.getString("gender");
             }
 
             String first_name = firstname.getEditText().getText().toString().trim();
@@ -158,6 +160,7 @@ public class activity_registration_next extends AppCompatActivity {
             user.setUsername(username);
             user.setPassword(password);
             user.setEmail(email);
+            user.setGender(gender);
             user.setFirst_name(first_name);
             user.setMiddle_init(middle);
             user.setLast_name(last_name);

@@ -17,6 +17,8 @@ import android.widget.Button;
 import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 import android.os.Bundle;
 
@@ -35,6 +37,9 @@ public class activity_registration extends AppCompatActivity {
     private TextInputLayout signup_username;
     private TextInputLayout signup_email;
     private TextInputLayout signup_password;
+    private RadioGroup radiogroup;
+    private RadioButton radioButton;
+
     private static final Pattern PATTERN_PASSWORD=
             Pattern.compile("^" +
                     "(?=.*[0-9])" +  //atleast 1 digit
@@ -84,7 +89,7 @@ public class activity_registration extends AppCompatActivity {
         });
 
            next_button = (Button)findViewById(R.id.next_btn);
-
+           radiogroup = (RadioGroup) findViewById(R.id.radioGroup);
     }
     private void storagePermissionRequest()
         {
@@ -215,10 +220,17 @@ public class activity_registration extends AppCompatActivity {
         String username = signup_username.getEditText().getText().toString().trim();
         String email = signup_email.getEditText().getText().toString().trim();
         String password = signup_password.getEditText().getText().toString().trim();
+
+        int selectedId = radiogroup.getCheckedRadioButtonId();
+        radioButton = (RadioButton)findViewById(selectedId);
+        String radio_value = (String) radioButton.getText();
+
         Bundle bundle = new Bundle();
         bundle.putString("username",username);
         bundle.putString("email",email);
         bundle.putString("password",password);
+        bundle.putString("gender",radio_value);
+
         Intent intent = new Intent(activity_registration.this,activity_registration_next.class);
         intent.putExtras(bundle);
         startActivity(intent);
