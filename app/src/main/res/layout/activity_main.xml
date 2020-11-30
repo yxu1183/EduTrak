@@ -91,6 +91,7 @@
         android:background="@drawable/roundbutton"
         android:onClick="inputconfirm"
         android:text="@string/login"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -114,7 +115,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="34dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="5dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -131,7 +132,6 @@
             android:paddingLeft="73sp"
             android:paddingEnd="0sp"
             android:paddingRight="0sp"
-
             android:text="@string/don_t_have_an_account"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="15sp" />
