@@ -7,39 +7,20 @@
     tools:context=".activity_registration"
     android:background="@drawable/gradient_background">
 
-    <ImageView
-        android:id="@+id/chose_image_view"
-        android:layout_width="176dp"
-        android:layout_height="170dp"
-        android:layout_marginStart="117dp"
-        android:layout_marginLeft="117dp"
-        android:layout_marginTop="47dp"
-        android:layout_marginEnd="118dp"
-        android:layout_marginRight="118dp"
-        android:layout_marginBottom="44dp"
-        android:contentDescription="@string/username"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ic_baseline_account_circle_24"
-        app:layout_constraintBottom_toTopOf="@+id/chose_image_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/chose_image_btn"
-        android:layout_width="159dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="126dp"
-        android:layout_marginLeft="126dp"
-        android:layout_marginEnd="126dp"
-        android:layout_marginRight="126dp"
-        android:layout_marginBottom="432dp"
-        android:background="@drawable/roundbutton"
-        android:text="@string/upload_picture"
+    <TextView
+        android:id="@+id/appname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="216dp"
+        android:text="@string/edutrak"
+        android:textColor="#000000"
+        android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chose_image_view" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.057" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/loginemail_layout"
@@ -136,11 +117,12 @@
         android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginBottom="35dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chose_image_btn">
+        app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
             android:id="@+id/male_radiobutton"
@@ -175,5 +157,17 @@
             android:text="@string/other" />
 
     </RadioGroup>
+
+    <ImageView
+        android:id="@+id/imageapp"
+        android:layout_width="226dp"
+        android:layout_height="208dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.097"
+        app:srcCompat="@drawable/logo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

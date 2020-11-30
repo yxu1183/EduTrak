@@ -26,8 +26,6 @@ import java.util.regex.Pattern;
 
 public class activity_registration extends AppCompatActivity {
 
-    public Button picture_button;
-    public ImageView picture_view;
     public Button cancel_button;
     public Button next_button;
     private TextInputLayout signup_username;
@@ -58,23 +56,6 @@ public class activity_registration extends AppCompatActivity {
         signup_email = findViewById(R.id.email_layout);
         signup_password = findViewById(R.id.password_layout);
 
-        picture_button = (Button) findViewById(R.id.chose_image_btn);
-        picture_view = (ImageView) findViewById(R.id.chose_image_view);
-
-        picture_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (ContextCompat.checkSelfPermission(activity_registration.this,
-                        Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
-                    Toast.makeText(activity_registration.this, "Permission is already granted!",
-                            Toast.LENGTH_SHORT).show();
-                    pickImageFromGallery();
-                } else {
-                    storagePermissionRequest();
-                }
-            }
-        });
-
         cancel_button = (Button) findViewById(R.id.canc_btn);
         cancel_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,65 +67,6 @@ public class activity_registration extends AppCompatActivity {
 
         next_button = (Button)findViewById(R.id.next_btn);
         radiogroup = (RadioGroup) findViewById(R.id.radioGroup);
-    }
-    private void storagePermissionRequest()
-    {
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                Manifest.permission.READ_EXTERNAL_STORAGE))
-        {
-            new AlertDialog.Builder(this)
-                    .setTitle("Permission Required")
-                    .setMessage("This permission is required to access media and files.")
-                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            ActivityCompat.requestPermissions(activity_registration.this,
-                                    new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSION_CODE);
-                        }
-                    })
-                    .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.dismiss();
-                        }
-                    })
-                    .create().show();
-        }
-        else
-        {
-            ActivityCompat.requestPermissions(this,
-                    new String[] {Manifest.permission.READ_EXTERNAL_STORAGE}, PERMISSION_CODE);
-        }
-
-    }
-
-    private void pickImageFromGallery()
-    {
-        Intent intent = new Intent(Intent.ACTION_PICK);
-        intent.setType("image/*");
-        startActivityForResult(intent,IMAGE_PICK_CODE);
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == PERMISSION_CODE)  {
-            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "Permission GRANTED", Toast.LENGTH_SHORT).show();
-                pickImageFromGallery();
-            } else {
-                Toast.makeText(this, "Permission DENIED", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode == RESULT_OK && requestCode ==IMAGE_PICK_CODE)
-        {
-            picture_view.setImageURI(data.getData());
-        }
     }
 
     private boolean usernamevalidate()
