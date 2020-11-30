@@ -1,8 +1,10 @@
 package com.example.edutrak;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -11,6 +13,7 @@ import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.util.Patterns;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Button;
 import android.content.Intent;
@@ -18,6 +21,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
@@ -36,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        fAuth = FirebaseAuth.getInstance();
 
         textemail = findViewById(R.id.loginemail_layout);
         textinputpassword = findViewById(R.id.password_layout);
@@ -68,9 +75,37 @@ public class MainActivity extends AppCompatActivity {
         ClickableSpan clickableSpan1 = new ClickableSpan() {
             @Override
             public void onClick(@NonNull View widget) {
-                Intent intent = new Intent(MainActivity.this, activity_forgotpassword.class);
-                startActivity(intent);
-                Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
+                final EditText resetMail = new EditText(widget.getContext());
+                AlertDialog.Builder passwordResetDialog = new AlertDialog.Builder(widget.getContext());
+                passwordResetDialog.setTitle("Reset Password?");
+                passwordResetDialog.setMessage("Enter Your Email to Receive Reset Link:");
+                passwordResetDialog.setView(resetMail);
+
+                passwordResetDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String mail = resetMail.getText().toString();
+                        fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Toast.makeText(MainActivity.this, "Reset Link Sent to your Email.", Toast.LENGTH_SHORT).show();
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Toast.makeText(MainActivity.this, "Error! Reset Link is not sent." + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                });
+
+                passwordResetDialog.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                passwordResetDialog.create().show();
             }
 
             @Override
@@ -86,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
         loginbtn = (Button) findViewById(R.id.button_login);
 
-        fAuth = FirebaseAuth.getInstance();
+
     }
 
     private boolean validateEmail() {
