@@ -7,31 +7,31 @@
     android:background="@drawable/gradient_background">
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/schedule_scanner_icon_removebg_preview"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="292dp" />
-
-    <ImageView
         android:id="@+id/imageView4"
         android:layout_width="524dp"
         android:layout_height="365dp"
         app:srcCompat="@drawable/schedule_planner_header__1_"
-        tools:layout_editor_absoluteX="-52dp"
-        tools:layout_editor_absoluteY="-74dp" />
+        tools:layout_editor_absoluteX="-57dp"
+        tools:layout_editor_absoluteY="-89dp" />
 
     <TextView
         android:id="@+id/text_view6"
-        android:layout_width="410dp"
-        android:layout_height="184dp"
+        android:layout_width="413dp"
+        android:layout_height="131dp"
         android:gravity="center"
         android:text="Click on icon to submit a pdf file to scan"
         android:textColor="#DC143C"
         android:textSize="100px"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="189dp" />
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="164dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="429dp"
+        android:layout_height="428dp"
+        app:srcCompat="@drawable/schedule_scanner_icon_removebg_preview"
+        tools:layout_editor_absoluteX="-8dp"
+        tools:layout_editor_absoluteY="305dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
