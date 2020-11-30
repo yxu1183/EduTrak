@@ -6,30 +6,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class activity_homepage extends AppCompatActivity {
-    private long backPressedTime;
-    private Toast backToast;
+public class Calendar extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_homepage);
+        setContentView(R.layout.activity_calendar);
+
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.tasks);
+        bottomNavigationView.setSelectedItemId(R.id.calendar);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
                     case R.id.tasks:
+                        startActivity(new Intent(getApplicationContext()
+                                , activity_homepage.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.calendar:
-                        startActivity(new Intent(getApplicationContext()
-                                , Calendar.class));
-                        overridePendingTransition(0,0);
                         return true;
                     case R.id.schedulescan:
                         startActivity(new Intent(getApplicationContext()
@@ -45,20 +45,5 @@ public class activity_homepage extends AppCompatActivity {
                 return false;
             }
         });
-
     }
-    @Override
-    public void onBackPressed() {
-        if (backPressedTime + 2000 > System.currentTimeMillis()) {
-            backToast.cancel();
-            super.onBackPressed();
-            finishAffinity();
-        } else {
-            backToast = Toast.makeText(getBaseContext(), "Press back again to exit", Toast.LENGTH_SHORT);
-            backToast.show();
-        }
-        backPressedTime = System.currentTimeMillis();
-    }
-
-
 }
