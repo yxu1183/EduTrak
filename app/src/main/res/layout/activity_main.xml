@@ -119,14 +119,14 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="34dp"
-        android:layout_marginTop="575dp"
+        android:layout_marginBottom="25dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="@+id/button_login">
 
         <TextView
             android:id="@+id/editview_noaccount"
@@ -139,7 +139,7 @@
             android:paddingRight="0sp"
             android:text="Don't have an account?"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="17sp" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/ediview_signup"
@@ -148,7 +148,7 @@
             android:layout_weight="1"
             android:text="@string/sign_up"
             android:textColor="@color/design_default_color_error"
-            android:textSize="17sp" />
+            android:textSize="15sp" />
 
     </LinearLayout>
 
