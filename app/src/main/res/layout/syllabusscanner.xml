@@ -23,7 +23,7 @@
         android:textColor="#DC143C"
         android:textSize="100px"
         tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="164dp" />
+        tools:layout_editor_absoluteY="181dp" />
 
     <ImageButton
         android:id="@+id/imageButton2"
