@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="no_Account">Don\'t have an account?</string>
+    <string name="no_account">"Don't have an account? "</string>
+</resources>
