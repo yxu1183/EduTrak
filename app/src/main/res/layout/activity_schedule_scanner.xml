@@ -8,16 +8,16 @@
 
     <TextView
         android:id="@+id/text_view6"
-        android:layout_width="410dp"
-        android:layout_height="109dp"
+        android:layout_width="372dp"
+        android:layout_height="129dp"
         android:layout_marginBottom="16dp"
         android:gravity="center"
         android:text="Click on icon to submit a pdf file to scan"
         android:textColor="#DC143C"
-        android:textSize="100px"
+        android:textSize="80px"
         app:layout_constraintBottom_toTopOf="@+id/imageButton6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintHorizontal_bias="0.41"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
@@ -45,7 +45,7 @@
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.551"
+        app:layout_constraintVertical_bias="0.333"
         app:srcCompat="@drawable/schedule_planner_header__3__edited_removebg_preview" />
 
     <ImageButton
