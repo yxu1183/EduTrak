@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.SpannableString;
@@ -13,6 +14,8 @@ import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.util.Patterns;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Button;
@@ -36,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     public Button loginbtn;
     private TextInputLayout textemail;
     private TextInputLayout textinputpassword;
+    private CheckBox remember;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +50,18 @@ public class MainActivity extends AppCompatActivity {
 
         textemail = findViewById(R.id.loginemail_layout);
         textinputpassword = findViewById(R.id.password_layout);
-
+        remember = findViewById(R.id.rememberme_checkbox);
         textview = (TextView) findViewById(R.id.ediview_signup);
+
+        SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+        String new_checkbox = preferences.getString("remember", "");
+        if (new_checkbox.equals("true")) {
+            Intent intent = new Intent(MainActivity.this, activity_homepage.class);
+            startActivity(intent);
+        } else if (new_checkbox.equals("false")) {
+            Toast.makeText(this, "Please Log In.", Toast.LENGTH_SHORT).show();
+        }
+
         String text = "Sign Up";
         SpannableString ss = new SpannableString(text);
         ClickableSpan clickableSpan = new ClickableSpan() {
@@ -121,7 +135,24 @@ public class MainActivity extends AppCompatActivity {
 
         loginbtn = (Button) findViewById(R.id.button_login);
 
-
+        remember.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (buttonView.isChecked()) {
+                    SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("remember", "true");
+                    editor.apply();
+                    Toast.makeText(MainActivity.this, "Checked", Toast.LENGTH_SHORT).show();
+                } else if (!buttonView.isChecked()) {
+                    SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("remember", "false");
+                    editor.apply();
+                    Toast.makeText(MainActivity.this, "Unchecked", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
     private boolean validateEmail() {
@@ -157,22 +188,21 @@ public class MainActivity extends AppCompatActivity {
         } else {
             String input_email = textemail.getEditText().getText().toString().trim();
             String input_password = textinputpassword.getEditText().getText().toString().trim();
-                fAuth.signInWithEmailAndPassword(input_email,input_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful())
-                        {
-                            Intent intent = new Intent(MainActivity.this, activity_homepage.class);
-                            startActivity(intent);
-                            Toast.makeText(MainActivity.this, "Login Successful.", Toast.LENGTH_LONG).show();
-                        }
-                        else
-                            Toast.makeText(MainActivity.this, "Error!"+task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                    }
-                });
 
-            }
+            fAuth.signInWithEmailAndPassword(input_email, input_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        Intent intent = new Intent(MainActivity.this, activity_homepage.class);
+                        startActivity(intent);
+                        Toast.makeText(MainActivity.this, "Login Successful.", Toast.LENGTH_LONG).show();
+                    } else
+                        Toast.makeText(MainActivity.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                }
+            });
+
         }
     }
+}
 
 

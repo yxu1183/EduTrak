@@ -88,7 +88,7 @@
         android:layout_width="251dp"
         android:layout_height="36dp"
         android:layout_centerVertical="true"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="65dp"
         android:background="@drawable/roundbutton"
         android:gravity="center"
         android:onClick="inputconfirm"
@@ -103,6 +103,7 @@
         android:id="@+id/textview_forgotpassword"
         android:layout_width="161dp"
         android:layout_height="29dp"
+        android:gravity="center"
         android:text="@string/forgot_password"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -120,7 +121,7 @@
         android:layout_marginLeft="29dp"
         android:layout_marginEnd="104dp"
         android:layout_marginRight="104dp"
-        android:layout_marginBottom="110dp"
+        android:layout_marginBottom="90dp"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -150,6 +151,19 @@
             android:textSize="15sp" />
 
     </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/rememberme_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="29dp"
+        android:text="@string/remember_me"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
