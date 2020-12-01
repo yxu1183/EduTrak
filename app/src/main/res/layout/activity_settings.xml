@@ -102,7 +102,7 @@
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationView"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="60dp"
             android:background="@color/cardview_light_background"
             app:itemTextColor="@drawable/selector"
             app:itemIconTint="@drawable/selector"
@@ -113,5 +113,4 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
