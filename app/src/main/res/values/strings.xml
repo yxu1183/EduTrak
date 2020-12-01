@@ -26,7 +26,25 @@
     <string name="no_account">"Don't have an account? "</string>
     <string name="click_on_icon_to_submit_a_pdf_file_to_scan">Click on icon to submit a pdf file to scan</string>
     <string name="please_click_on_the_icon_to_submit_a_pdf_to_scan">Please click on the icon to submit a pdf to scan</string>
-    <string name="settings">Settings</string>
     <string name="logout">Logout</string>
     <string name="remember_me">Remember me</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="manage_notifications">Manage Notifications</string>
+    <string name="settings">Settings</string>
+    <string name="edit_info">Edit Info</string>
 </resources>

@@ -49,7 +49,7 @@ public class Settings extends AppCompatActivity {
             }
         });
 
-        Button logout_btn = findViewById(R.id.logout_button);
+        Button logout_btn = findViewById(R.id.logout_btn);
         logout_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
