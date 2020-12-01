@@ -4,34 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background">
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="524dp"
-        android:layout_height="365dp"
-        app:srcCompat="@drawable/schedule_planner_header__1_"
-        tools:layout_editor_absoluteX="-57dp"
-        tools:layout_editor_absoluteY="-89dp" />
+    android:background="@color/design_default_color_background">
 
     <TextView
         android:id="@+id/text_view6"
-        android:layout_width="413dp"
-        android:layout_height="131dp"
+        android:layout_width="410dp"
+        android:layout_height="109dp"
+        android:layout_marginBottom="16dp"
         android:gravity="center"
         android:text="Click on icon to submit a pdf file to scan"
         android:textColor="#DC143C"
         android:textSize="100px"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="181dp" />
+        app:layout_constraintBottom_toTopOf="@+id/imageButton6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@color/cardview_light_background"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="344dp"
+        android:layout_height="137dp"
+        app:layout_constraintBottom_toTopOf="@+id/text_view6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.551"
+        app:srcCompat="@drawable/schedule_planner_header__3__edited_removebg_preview" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="429dp"
-        android:layout_height="428dp"
-        app:srcCompat="@drawable/schedule_scanner_icon_removebg_preview"
-        tools:layout_editor_absoluteX="-8dp"
-        tools:layout_editor_absoluteY="305dp" />
-
+        android:id="@+id/imageButton6"
+        android:layout_width="345dp"
+        android:layout_height="346dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.941"
+        app:srcCompat="@drawable/schedule_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
