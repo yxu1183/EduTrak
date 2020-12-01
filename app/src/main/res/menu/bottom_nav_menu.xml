@@ -9,7 +9,7 @@
     <item
         android:id="@+id/calendar"
         android:title="Calendar"
-        android:icon="@drawable/ic_calendar_28"/>
+        android:icon="@drawable/ic_calendar_208"/>
 
     <item
         android:id="@+id/schedulescan"
