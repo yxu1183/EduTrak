@@ -24,4 +24,6 @@
     <string name="forgot_password2">Forgot Password</string>
     <string name="submit">Submit</string>
     <string name="no_account">"Don't have an account? "</string>
+    <string name="click_on_icon_to_submit_a_pdf_file_to_scan">Click on icon to submit a pdf file to scan</string>
+    <string name="please_click_on_the_icon_to_submit_a_pdf_to_scan">Please click on the icon to submit a pdf to scan</string>
 </resources>
