@@ -13,7 +13,7 @@
         android:fontFamily="sans-serif-condensed"
         android:gravity="center"
         android:text="@string/please_click_on_the_icon_to_submit_a_pdf_to_scan"
-        android:textColor="#DC143C"
+        android:textColor="@android:color/black"
         android:textSize="28sp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
