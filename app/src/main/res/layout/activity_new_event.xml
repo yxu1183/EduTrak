@@ -33,6 +33,30 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/course_code_layout"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/event_time_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/text_event_course"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_calendar_24"
+            android:drawableLeft="@drawable/ic_calendar_24"
+            android:drawablePadding="@dimen/my_value"
+            android:hint="@string/course_code"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="47dp"
+            tools:textSize="20sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/event_date_layout"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
@@ -98,7 +122,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/light_gray"
+            android:background="@color/white"
             android:text="@string/cancel"
             android:textAllCaps="false"
             android:textColor="@color/dark_blue_google"
@@ -109,7 +133,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/light_gray"
+            android:background="@color/white"
             android:text="@string/save"
             android:textAllCaps="false"
             android:textColor="@color/dark_blue_google"
@@ -131,7 +155,7 @@
             android:id="@+id/imageView4"
             android:layout_width="354dp"
             android:layout_height="241dp"
-            app:srcCompat="@drawable/roundbutton"
+            app:srcCompat="@drawable/offwhitebutton"
             tools:layout_editor_absoluteX="28dp"
             tools:layout_editor_absoluteY="400dp" />
 

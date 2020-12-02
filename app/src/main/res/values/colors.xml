@@ -5,4 +5,5 @@
     <color name="colorAccent">#508ff8</color>
     <color name="light_gray">#D7DBDD</color>
     <color name="dark_blue_google">#375bbd</color>
+    <color name="white">#FFFFFF</color>
 </resources>

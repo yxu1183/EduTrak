@@ -35,6 +35,7 @@
     <string name="date">Date (mm/dd/yyy)</string>
     <string name="time_optional">Time (Optional)</string>
     <string name="description">Add description</string>
+    <string name="course_code">Course Number (ex. CSE3310)</string>
     <string name="save">Save</string>
 
     <!-- Preference Titles -->
