@@ -54,10 +54,6 @@ public class Settings extends AppCompatActivity {
             }
         });
 
-//        FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
-//        String email = mFirebaseUser.getEmail().toString().trim();
-//        System.out.println(email);
-
         Button logout_btn = findViewById(R.id.logout_btn);
         logout_btn.setOnClickListener(new View.OnClickListener() {
             @Override

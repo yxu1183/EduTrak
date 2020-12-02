@@ -65,7 +65,7 @@
         app:srcCompat="@drawable/logo" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/scanner_image"
         android:layout_width="238dp"
         android:layout_height="198dp"
         android:layout_marginTop="32dp"
