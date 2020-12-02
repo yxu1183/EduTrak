@@ -6,14 +6,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.ImageButton;
 
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Calendar extends AppCompatActivity {
-
-    CalendarView calendarView;
+    private ImageButton createEventBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,13 +51,17 @@ public class Calendar extends AppCompatActivity {
             }
         });
 
-        calendarView = (CalendarView) findViewById(R.id.calendarView);
-
-        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+        createEventBtn = (ImageButton) findViewById(R.id.create_event_button);
+        createEventBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onSelectedDayChange(@NonNull CalendarView calendarView, int i, int i1, int i2) {
-                String date = (i1 + 1) + "/" + i2 + "/" + i;
+            public void onClick (View v) {
+                openNewEvent();
             }
         });
+    }
+
+    public void openNewEvent(){
+        Intent intent = new Intent(this, NewEvent.class);
+        startActivity(intent);
     }
 }
