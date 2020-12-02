@@ -35,24 +35,24 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.MyViewHolder> 
         myViewHolder.task_title.setText(myDoes.get(i).getTitle());
         myViewHolder.task_desc.setText(myDoes.get(i).getDescription());
         myViewHolder.task_date.setText(myDoes.get(i).getDate());
-        //myViewHolder.time.setText(myDoes.get(i).getTime());
+       // myViewHolder.key.setText(myDoes.get(i).getTime());
 
         final String getTitle = myDoes.get(i).getTitle();
         final String getDesc = myDoes.get(i).getDescription();
         final String getDate = myDoes.get(i).getDate();
-        //final String getKeyDoes = myDoes.get(i).getKeydoes();
+        final String getEvent_Key = myDoes.get(i).getKey_event();
 
-       /* myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+        myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent aa = new Intent(context,EditTaskDesk.class);
-                aa.putExtra("titledoes", getTitle);
-                aa.putExtra("descdoes", getDesc);
-                aa.putExtra("datedoes", getDate);
-                //aa.putExtra("keydoes", getKeyDoes);
+                aa.putExtra("title", getTitle);
+                aa.putExtra("description", getDesc);
+                aa.putExtra("date", getDate);
+                aa.putExtra("key_event", getEvent_Key);
                 context.startActivity(aa);
             }
-        });*/
+        });
     }
 
     @Override

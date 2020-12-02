@@ -29,7 +29,7 @@
     <string name="logout">Logout</string>
     <string name="remember_me">Remember me</string>
     <string name="title_activity_settings">SettingsActivity</string>
-    
+
     <!-- New Event Titles-->
     <string name="title">Add Title</string>
     <string name="date">Date (mm/dd/yy)</string>

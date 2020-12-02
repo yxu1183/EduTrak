@@ -12,6 +12,8 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Random;
+
 
 public class NewEvent extends AppCompatActivity {
     private Button cancelbtn;
@@ -21,6 +23,8 @@ public class NewEvent extends AppCompatActivity {
 
     FirebaseDatabase rootNode;
     DatabaseReference reference;
+    Integer eventNum = new Random().nextInt();
+    String eventKey = Integer.toString(eventNum);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,9 +60,9 @@ public class NewEvent extends AppCompatActivity {
                 String time = eventTimeInput.getEditText().getText().toString();
                 String description = eventDescInput.getText().toString();
 
-                EventHelperClass eventHelperClass = new EventHelperClass(title, courseNumber, date, time, description);
+                EventHelperClass eventHelperClass = new EventHelperClass(title, courseNumber, date, time, description, eventKey);
 
-                reference.child(title).setValue(eventHelperClass);
+                reference.child(eventKey).setValue(eventHelperClass);
                 closeWindow();
             }
         });

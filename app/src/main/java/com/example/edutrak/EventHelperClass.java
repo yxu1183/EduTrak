@@ -2,16 +2,26 @@ package com.example.edutrak;
 
 public class EventHelperClass {
     String title, course, date, time, description;
+    String key_event;
 
     public EventHelperClass() {
     }
 
-    public EventHelperClass(String title, String course, String date, String time, String description) {
+    public EventHelperClass(String title, String course, String date, String time, String description, String key_event) {
         this.title = title;
         this.course = course;
         this.date = date;
         this.time = time;
         this.description = description;
+        this.key_event = key_event;
+    }
+
+    public String getKey_event() {
+        return key_event;
+    }
+
+    public void setKey_event(String key_event) {
+        this.key_event = key_event;
     }
 
     public void setTitle(String title) {
