@@ -8,7 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -18,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 public class EditTaskDesk extends AppCompatActivity {
 
     EditText edit_title, edit_date, edit_desc;
-    Button btn_save, btn_cancel;
+    Button btn_save, btn_delete;
 
     FirebaseDatabase rootNode;
     DatabaseReference reference;
@@ -33,19 +36,40 @@ public class EditTaskDesk extends AppCompatActivity {
         edit_date = findViewById(R.id.edit_date);
 
         btn_save = findViewById(R.id.saveupdate_btn);
-        btn_cancel = findViewById(R.id.delete_btn);
+        btn_delete = findViewById(R.id.delete_btn);
 
         edit_title.setText(getIntent().getStringExtra("title"));
         edit_desc.setText(getIntent().getStringExtra("description"));
         edit_date.setText(getIntent().getStringExtra("date"));
         final String key_event = getIntent().getStringExtra("key_event");
 
+
+        //get reference from database
+        rootNode = FirebaseDatabase.getInstance();
+        reference = rootNode.getReference().child("Events").child(key_event);
+
+        btn_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                reference.removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if(task.isSuccessful())
+                        {
+                            Intent a = new Intent(EditTaskDesk.this, activity_homepage.class);
+                            startActivity(a);
+                        }
+                        else {
+                            Toast.makeText(getApplicationContext(), "Delete Failed", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }
+        });
+
         btn_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                rootNode = FirebaseDatabase.getInstance();
-                //reference.child(eventKey).setValue(eventHelperClass);
-                reference = rootNode.getReference().child("Events").child(key_event);
 
                 reference.addValueEventListener(new ValueEventListener() {
                     @Override
