@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/titlepage"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="45dp"
                 android:textColor="@color/white"
                 android:text="Upcoming Tasks"
                 android:textAlignment="center"
