@@ -1,3 +1,4 @@
+
 package com.example.edutrak;
 
 import androidx.annotation.NonNull;
@@ -12,13 +13,17 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Settings extends AppCompatActivity {
-
+    FirebaseAuth mFirebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
+        mFirebaseAuth = FirebaseAuth.getInstance();
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setSelectedItemId(R.id.settings);
@@ -49,6 +54,10 @@ public class Settings extends AppCompatActivity {
             }
         });
 
+//        FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
+//        String email = mFirebaseUser.getEmail().toString().trim();
+//        System.out.println(email);
+
         Button logout_btn = findViewById(R.id.logout_btn);
         logout_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +66,7 @@ public class Settings extends AppCompatActivity {
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putString("remember","false");
                 editor.apply();
+                mFirebaseAuth.signOut();
                 Intent intent = new Intent(Settings.this, MainActivity
                         .class);
                 startActivity(intent);
