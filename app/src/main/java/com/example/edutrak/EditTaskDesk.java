@@ -44,7 +44,8 @@ public class EditTaskDesk extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 rootNode = FirebaseDatabase.getInstance();
-                reference = rootNode.getReference().child("Events" + key_event);
+                //reference.child(eventKey).setValue(eventHelperClass);
+                reference = rootNode.getReference().child("Events").child(key_event);
 
                 reference.addValueEventListener(new ValueEventListener() {
                     @Override
