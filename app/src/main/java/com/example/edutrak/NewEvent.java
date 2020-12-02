@@ -25,6 +25,13 @@ public class NewEvent extends AppCompatActivity {
                 cancelEvent();
             }
         });
+
+        savebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View v) {
+                cancelEvent();// change in a bit
+            }
+        });
     }
 
     public void cancelEvent(){
