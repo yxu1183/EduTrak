@@ -25,6 +25,7 @@
             android:id="@+id/text_event_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/MM"
             android:hint="@string/title"
             tools:layout_editor_absoluteX="0dp"
             tools:layout_editor_absoluteY="47dp"

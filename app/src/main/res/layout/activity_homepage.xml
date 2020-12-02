@@ -25,8 +25,9 @@
                 android:layout_marginTop="45dp"
                 android:textColor="@color/white"
                 android:text="Upcoming Tasks"
+                android:fontFamily="@font/MM"
                 android:textAlignment="center"
-                android:textSize="28sp"
+                android:textSize="30sp"
                 android:gravity="center_horizontal" />
 
             <TextView
@@ -36,6 +37,7 @@
                 android:textColor="#4A4E6A"
                 android:layout_marginTop="8dp"
                 android:textAlignment="center"
+                android:fontFamily="@font/ML"
                 android:text="Finish Them Quickly"
                 android:layout_gravity="center_horizontal"
                 android:textSize="18sp"/>
