@@ -1,0 +1,52 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/task_background"
+    android:layout_marginBottom="20dp"
+    android:layout_height="100dp">
+
+    <LinearLayout
+        android:layout_marginLeft="16dp"
+        android:orientation="vertical"
+        android:layout_width="200dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/task_title"
+            android:layout_marginTop="19dp"
+            android:textSize="22sp"
+            android:textColor="#000C5D"
+            android:text="Final Exam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/task_desc"
+            android:textSize="18sp"
+            android:textColor="#ADADAD"
+            android:layout_marginTop="8dp"
+            android:text="CSE 3310"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/task_date"
+            android:textSize="18sp"
+            android:textColor="#F63EA5"
+            android:layout_marginTop="8dp"
+            android:text="Tomorrow"
+            android:gravity="left"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

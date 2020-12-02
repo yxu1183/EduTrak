@@ -32,7 +32,7 @@
     
     <!-- New Event Titles-->
     <string name="title">Add Title</string>
-    <string name="date">Date (mm/dd/yyy)</string>
+    <string name="date">Date (mm/dd/yy)</string>
     <string name="time_optional">Time (Optional)</string>
     <string name="description">Add description</string>
     <string name="course_code">Course Number (ex. CSE3310)</string>

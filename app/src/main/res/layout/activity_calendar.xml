@@ -38,27 +38,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="97dp"
-        android:layout_height="89dp"
-        android:text="Day"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarView" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="128dp"
-        android:layout_height="22dp"
-        android:layout_marginBottom="112dp"
-        android:text="Monday"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <ImageButton
         android:id="@+id/create_event_button"
         android:layout_width="50dp"

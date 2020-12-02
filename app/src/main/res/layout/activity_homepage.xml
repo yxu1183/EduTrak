@@ -8,19 +8,62 @@
     android:background = "@drawable/gradient_background"
     tools:context=".MainActivity">
 
-        <TextView
-            android:id="@+id/firstFragment"
-            android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="198dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/titlepage"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/white"
+                android:text="Upcoming Tasks"
+                android:textAlignment="center"
+                android:textSize="28sp"
+                android:gravity="center_horizontal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/subtitle"
+                android:textColor="#4A4E6A"
+                android:layout_marginTop="8dp"
+                android:textAlignment="center"
+                android:text="Finish Them Quickly"
+                android:layout_gravity="center_horizontal"
+                android:textSize="18sp"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tasks"
-            android:textColor="#43a047"
-            android:textSize="40sp"
-            android:textStyle="italic|bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginTop="-60dp"
+            android:layout_marginRight="16dp"
+            android:id="@+id/todolist"
+            android:layout_marginLeft="16dp">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:textColor="#9A9A9A"
+            android:layout_marginTop="30dp"
+            android:text="No Tasks Left"
+            android:textAlignment="center"
+            android:id="@+id/endpage"
+            android:gravity="center_horizontal" />
+
+    </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
@@ -35,4 +78,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
