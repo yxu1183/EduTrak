@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
     tools:context=".NewEvent">
 
 
@@ -11,14 +12,14 @@
         android:id="@+id/event_title_layout"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginLeft="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginStart="19dp"
         app:layout_constraintHorizontal_bias="0.279"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.074"
-        android:layout_marginLeft="20dp">
+        app:layout_constraintVertical_bias="0.074">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/text_event_title"
