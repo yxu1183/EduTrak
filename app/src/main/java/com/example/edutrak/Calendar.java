@@ -2,6 +2,8 @@ package com.example.edutrak;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,12 +12,25 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class Calendar extends AppCompatActivity {
     private ImageButton createEventBtn;
+    FirebaseDatabase rootNode;
+    DatabaseReference reference;
+    RecyclerView todolist;
+    ArrayList<EventHelperClass> list;
+    TaskAdapter taskAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +63,30 @@ public class Calendar extends AppCompatActivity {
                         return true;
                 }
                 return false;
+            }
+        });
+
+        todolist = findViewById(R.id.todolist);
+        todolist.setLayoutManager(new LinearLayoutManager(this));
+        list = new ArrayList<EventHelperClass>();
+
+        reference = FirebaseDatabase.getInstance().getReference().child("Events");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot dataSnapshot1: dataSnapshot.getChildren())
+                {
+                    EventHelperClass p = dataSnapshot1.getValue(EventHelperClass.class);
+                    list.add(p);
+                    taskAdapter = new TaskAdapter(Calendar.this, list);
+                    todolist.setAdapter(taskAdapter);
+                    taskAdapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(getApplicationContext(), "No Data", Toast.LENGTH_SHORT).show();
             }
         });
 
