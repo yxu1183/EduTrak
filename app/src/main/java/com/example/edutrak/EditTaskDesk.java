@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class EditTaskDesk extends AppCompatActivity {
 
-    EditText edit_title, edit_date, edit_desc;
+    EditText edit_title, edit_date, edit_desc, edit_course;
     Button btn_save, btn_delete;
 
     FirebaseDatabase rootNode;
@@ -34,6 +34,7 @@ public class EditTaskDesk extends AppCompatActivity {
         edit_title = findViewById(R.id.edit_title);
         edit_desc = findViewById(R.id.edit_desc);
         edit_date = findViewById(R.id.edit_date);
+        edit_course = findViewById(R.id.edit_course);
 
         btn_save = findViewById(R.id.saveupdate_btn);
         btn_delete = findViewById(R.id.delete_btn);
@@ -41,6 +42,7 @@ public class EditTaskDesk extends AppCompatActivity {
         edit_title.setText(getIntent().getStringExtra("title"));
         edit_desc.setText(getIntent().getStringExtra("description"));
         edit_date.setText(getIntent().getStringExtra("date"));
+        edit_course.setText(getIntent().getStringExtra("course"));
         final String key_event = getIntent().getStringExtra("key_event");
 
 
@@ -77,6 +79,7 @@ public class EditTaskDesk extends AppCompatActivity {
                         snapshot.getRef().child("title").setValue(edit_title.getText().toString());
                         snapshot.getRef().child("date").setValue(edit_date.getText().toString());
                         snapshot.getRef().child("description").setValue(edit_desc.getText().toString());
+                        snapshot.getRef().child("course").setValue(edit_course.getText().toString());
 
                         Intent a = new Intent(EditTaskDesk.this, activity_homepage.class);
                         startActivity(a);

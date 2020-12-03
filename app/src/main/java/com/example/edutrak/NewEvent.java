@@ -69,7 +69,8 @@ public class NewEvent extends AppCompatActivity {
     }
 
     public void closeWindow(){
-        Intent intent = new Intent(this, Calendar.class);
-        startActivity(intent);
+        /*Intent intent = new Intent(this, Calendar.class);
+        startActivity(intent);*/
+        this.finish();
     }
 }

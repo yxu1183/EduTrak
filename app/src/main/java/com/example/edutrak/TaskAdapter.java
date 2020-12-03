@@ -33,13 +33,14 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder myViewHolder, int i) {
         myViewHolder.task_title.setText(myDoes.get(i).getTitle());
-        myViewHolder.task_desc.setText(myDoes.get(i).getDescription());
+        myViewHolder.task_desc.setText(myDoes.get(i).getCourse());
         myViewHolder.task_date.setText(myDoes.get(i).getDate());
        // myViewHolder.key.setText(myDoes.get(i).getTime());
 
         final String getTitle = myDoes.get(i).getTitle();
         final String getDesc = myDoes.get(i).getDescription();
         final String getDate = myDoes.get(i).getDate();
+        final String getCourse = myDoes.get(i).getCourse();
         final String getEvent_Key = myDoes.get(i).getKey_event();
 
         myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -49,6 +50,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.MyViewHolder> 
                 aa.putExtra("title", getTitle);
                 aa.putExtra("description", getDesc);
                 aa.putExtra("date", getDate);
+                aa.putExtra("course", getCourse);
                 aa.putExtra("key_event", getEvent_Key);
                 context.startActivity(aa);
             }

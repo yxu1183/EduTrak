@@ -5,42 +5,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background = "@drawable/gradient_background"
+    android:background = "@color/white"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
+        android:background="#e7e7e7"
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
+            android:background="@drawable/gradient_background_task"
             android:layout_height="198dp">
 
-            <TextView
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/titlepage"
-                android:layout_marginTop="35dp"
-                android:textColor="@color/white"
-                android:text="Upcoming Tasks"
-                android:fontFamily="@font/mm"
-                android:textAlignment="center"
-                android:textSize="30sp"
-                android:gravity="center_horizontal" />
+                android:layout_marginLeft="15dp"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/subtitle"
-                android:textColor="#4A4E6A"
-                android:layout_marginTop="8dp"
-                android:textAlignment="center"
-                android:fontFamily="@font/ml"
-                android:text="Finish Them Quickly"
-                android:layout_gravity="center_horizontal"
-                android:textSize="18sp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/titlepage"
+                    android:layout_marginTop="35dp"
+                    android:textColor="@color/white"
+                    android:text="Upcoming Tasks"
+                    android:fontFamily="@font/mm"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/subtitle"
+                    android:textColor="#e7e7e7"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/mm"
+                    android:text="Finish Them Quickly"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="18sp"/>
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/create_event_button"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginLeft="45dp"
+                android:background="@drawable/creat_event_btn"
+                android:contentDescription="@string/app_name"
+                android:drawable="@drawable/plus"
+                android:src="@drawable/plus"
+                android:textColor="@color/cardview_light_background"
+                app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+                app:layout_constraintEnd_toEndOf="parent" />
 
         </LinearLayout>
 
@@ -60,6 +82,7 @@
             android:textSize="16dp"
             android:textColor="#9A9A9A"
             android:layout_marginTop="30dp"
+            android:fontFamily="@font/mm"
             android:text="No Tasks Left"
             android:textAlignment="center"
             android:id="@+id/endpage"

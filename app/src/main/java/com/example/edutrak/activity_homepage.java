@@ -3,6 +3,8 @@ package com.example.edutrak;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +31,7 @@ public class activity_homepage extends AppCompatActivity {
     DatabaseReference reference;
 
     TextView titlepage, subtitlepage, endpage;
+    ImageButton createEventBtn;
     RecyclerView todolist;
     ArrayList<EventHelperClass> list;
     TaskAdapter taskAdapter;
@@ -69,6 +72,14 @@ public class activity_homepage extends AppCompatActivity {
         titlepage = findViewById(R.id.titlepage);
         subtitlepage = findViewById(R.id.subtitle);
         endpage = findViewById(R.id.endpage);
+        createEventBtn = findViewById(R.id.create_event_button);
+        createEventBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick (View v) {
+                openNewEvent();
+            }
+        });
+
 
         todolist = findViewById(R.id.todolist);
         todolist.setLayoutManager(new LinearLayoutManager(this));
@@ -110,5 +121,9 @@ public class activity_homepage extends AppCompatActivity {
         backPressedTime = System.currentTimeMillis();
     }
 
+    public void openNewEvent(){
+        Intent intent = new Intent(this, NewEvent.class);
+        startActivity(intent);
+    }
 
 }
