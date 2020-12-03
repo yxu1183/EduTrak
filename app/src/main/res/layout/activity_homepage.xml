@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/titlepage"
-                android:layout_marginTop="45dp"
+                android:layout_marginTop="35dp"
                 android:textColor="@color/white"
                 android:text="Upcoming Tasks"
                 android:fontFamily="@font/mm"
@@ -46,7 +46,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="495dp"
+            android:layout_height="525dp"
             android:layout_marginTop="-60dp"
             android:layout_marginRight="16dp"
             android:id="@+id/todolist"

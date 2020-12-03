@@ -6,8 +6,7 @@
         <item name="colorPrimary">#D7DBDD</item>
         <item name="colorPrimaryDark">#c6dfe2</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
-        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:statusBarColor">#c5e0e4</item>
         <item name="android:navigationBarColor">@android:color/white</item>
         <item name="android:windowLightNavigationBar">true</item>
     </style>
