@@ -35,27 +35,39 @@ public class editprofile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editprofile);
+
         username_layout = findViewById(R.id.layout_editinfo_username);
+        email_layout = findViewById(R.id.layout_Editemail);
+        firstname_layout = findViewById(R.id.layout_EditFirName);
+        middle_layout = findViewById(R.id.editinfo_middleInital);
+        lastname_layout = findViewById(R.id.editinfo_Lastname);
+        phone_layout = findViewById(R.id.editinfo_phoneNumber);
+        univeristy_layout = findViewById(R.id.editinfo_university);
+        classification_layout = findViewById(R.id.editinfo_classification);
 
+        Bundle bundle = getIntent().getExtras();
+        new_username = bundle.getString("username");
+        email = bundle.getString("email");
+        firstName = bundle.getString("firstName");
+        lastName = bundle.getString("lastName");
+        middleInit = bundle.getString("middleInit");
+        phone = bundle.getString("phone");
+        university = bundle.getString("university");
+        classification = bundle.getString("classification");
 
-        //String put_username =  username_layout.getEditText().getText().toString().trim();
-        //username_layout.getEditText().setText(username);
+        username_layout.getEditText().setText("  "+new_username);
+        email_layout.getEditText().setText("  "+email);
+        firstname_layout.getEditText().setText("  "+firstName);
+        middle_layout.getEditText().setText("  "+middleInit);
+        lastname_layout.getEditText().setText("  "+lastName);
+        phone_layout.getEditText().setText("  "+phone);
+        univeristy_layout.getEditText().setText("  "+university);
+        classification_layout.getEditText().setText("  "+classification);
+
         CancelButton = (Button) findViewById(R.id.new_button);
         CancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                    //new_username = intent.getStringExtra("userName");
-//                    email = bundle.getString("email");
-//                    firstName = bundle.getString("firstName");
-//                    lastName = bundle.getString("lastName");
-//                    middleInit = bundle.getString("middleInit");
-//                    phone = bundle.getString("phone");
-//                    university = bundle.getString("university");
-//                    classification = bundle.getString("classification");
-
-                //System.out.println("My name is" +new_username);
-                //System.out.println(email);
                 Intent intent = new Intent(editprofile.this, ScheduleScanner
                         .class);
                 startActivity(intent);

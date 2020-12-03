@@ -32,7 +32,7 @@
             android:layout_marginStart="1dp"
             android:layout_marginLeft="1dp"
             android:layout_marginTop="60dp"
-            android:text="Middle Int."
+            android:text="@string/last_name"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -51,7 +51,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/editinfo_middleInital"
-            android:layout_width="240dp"
+            android:layout_width="wrap_content"
             android:layout_height="53dp"
             android:layout_marginStart="112dp"
             android:layout_marginLeft="112dp"
@@ -69,7 +69,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layout_Editemail"
-            android:layout_width="240dp"
+            android:layout_width="wrap_content"
             android:layout_height="53dp"
             android:layout_marginStart="112dp"
             android:layout_marginLeft="112dp"
@@ -88,7 +88,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layout_editinfo_username"
-            android:layout_width="240dp"
+            android:layout_width="wrap_content"
             android:layout_height="53dp"
             android:layout_marginStart="112dp"
             android:layout_marginLeft="112dp"
@@ -107,7 +107,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layout_EditFirName"
-            android:layout_width="240dp"
+            android:layout_width="wrap_content"
             android:layout_height="53dp"
             android:layout_marginStart="112dp"
             android:layout_marginLeft="112dp"
@@ -126,7 +126,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/editinfo_Lastname"
-            android:layout_width="240dp"
+            android:layout_width="wrap_content"
             android:layout_height="53dp"
             android:layout_marginStart="112dp"
             android:layout_marginLeft="112dp"
@@ -145,7 +145,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/editinfo_phoneNumber"
-            android:layout_width="240dp"
+            android:layout_width="wrap_content"
             android:layout_height="53dp"
             android:layout_marginStart="112dp"
             android:layout_marginLeft="112dp"
@@ -163,7 +163,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/editinfo_university"
-            android:layout_width="240dp"
+            android:layout_width="wrap_content"
             android:layout_height="53dp"
             android:layout_marginStart="112dp"
             android:layout_marginLeft="112dp"
@@ -194,7 +194,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/editinfo_classification"
-            android:layout_width="240dp"
+            android:layout_width="wrap_content"
             android:layout_height="53dp"
             android:layout_marginStart="112dp"
             android:layout_marginLeft="112dp"
@@ -229,7 +229,7 @@
             android:layout_marginStart="1dp"
             android:layout_marginLeft="1dp"
             android:layout_marginTop="60dp"
-            android:text="@string/last_name"
+            android:text="Middle Init."
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />

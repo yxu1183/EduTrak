@@ -34,7 +34,7 @@ public class Settings extends AppCompatActivity {
     String phone = "";
     String university = "";
     String classification = "";
-    //Bundle bundle = new Bundle();
+    Bundle bundle = new Bundle();
     private static final String FIRE_LOG = "Fire_log";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -112,30 +112,20 @@ public class Settings extends AppCompatActivity {
                         {
                             Log.d(FIRE_LOG,"Error: " +task.getException().getMessage());
                         }
-                        System.out.println("My name is " +username);
-//                        bundle.putString("username",username);
-//                        bundle.putString("email",email);
-//                        bundle.putString("firstName",firstName);
-//                        bundle.putString("lastName",lastName);
-//                        bundle.putString("middleInit",middleInit);
-//                        bundle.putString("phone",phone);
-//                        bundle.putString("university",university);
-//                        bundle.putString("classification",classification);
+                        bundle.putString("username",username);
+                        bundle.putString("email",email);
+                        bundle.putString("firstName",firstName);
+                        bundle.putString("lastName",lastName);
+                        bundle.putString("middleInit",middleInit);
+                        bundle.putString("phone",phone);
+                        bundle.putString("university",university);
+                        bundle.putString("classification",classification);
+                        Intent intent = new Intent(Settings.this, editprofile
+                                .class);
+                        intent.putExtras(bundle);
+                        startActivity(intent);
                     }
                 });
-
-                Intent intent = new Intent(Settings.this, editprofile
-                        .class);
-                System.out.println("My name is " +username);
-                intent.putExtra("userName",username);
-                intent.putExtra("email",email);
-                intent.putExtra("firstName",firstName);
-                intent.putExtra("lastName",lastName);
-                intent.putExtra("middleInit",middleInit);
-                intent.putExtra("phone",phone);
-                intent.putExtra("university",university);
-                intent.putExtra("classification",classification);
-                startActivity(intent);
             }
         });
     }
