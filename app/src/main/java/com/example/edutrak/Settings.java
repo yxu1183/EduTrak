@@ -68,5 +68,15 @@ public class Settings extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button edit_info = findViewById(R.id.editinfo_btn);
+        edit_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Settings.this, editprofile
+                        .class);
+                startActivity(intent);
+            }
+        });
     }
 }
