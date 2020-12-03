@@ -197,6 +197,7 @@ public class activity_registration_next extends AppCompatActivity {
                             Log.d(TAG, "onSuccess: User Profile is created for"+userID);
                         }
                     });
+
                     Intent intent =new Intent(activity_registration_next.this,activity_homepage.class);
                     startActivity(intent);
                 }
