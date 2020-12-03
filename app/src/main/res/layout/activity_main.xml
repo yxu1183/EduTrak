@@ -28,8 +28,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="216dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginRight="36dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:fontFamily="@font/mm"
         android:text="@string/app_name"
         android:textColor="#000000"
         android:textSize="36sp"
@@ -86,18 +87,20 @@
     <Button
         android:id="@+id/button_login"
         android:layout_width="251dp"
-        android:layout_height="36dp"
+        android:layout_height="40dp"
         android:layout_centerVertical="true"
         android:layout_marginTop="65dp"
-        android:background="@drawable/roundbutton"
+        android:background="@drawable/login_button"
         android:gravity="center"
         android:onClick="inputconfirm"
         android:text="@string/login"
+        android:fontFamily="@font/mm"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_layout"
-        tools:textSize="20sp" />
+        tools:textSize="22sp" />
 
     <TextView
         android:id="@+id/textview_forgotpassword"
@@ -105,6 +108,7 @@
         android:layout_height="29dp"
         android:gravity="center"
         android:text="@string/forgot_password"
+        android:fontFamily="@font/mm"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -138,6 +142,7 @@
             android:paddingStart="73sp"
             android:paddingEnd="0sp"
             android:text="@string/no_account"
+            android:fontFamily="@font/mm"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="15sp" />
 
@@ -148,6 +153,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/sign_up"
+            android:fontFamily="@font/mm"
             android:textColor="@color/design_default_color_error"
             android:textSize="15sp" />
 
@@ -159,6 +165,7 @@
         android:layout_height="29dp"
         android:text="@string/remember_me"
         android:textSize="15sp"
+        android:fontFamily="@font/mm"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
