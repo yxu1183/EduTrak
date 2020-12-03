@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
         String new_checkbox = preferences.getString("remember", "");
         if (new_checkbox.equals("true")) {
-            Intent intent = new Intent(MainActivity.this, activity_homepage.class);
+            Intent intent = new Intent(MainActivity.this, ScheduleScanner.class);
             startActivity(intent);
         } else if (new_checkbox.equals("false")) {
             Toast.makeText(this, "Please Log In.", Toast.LENGTH_SHORT).show();
@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                        Intent intent = new Intent(MainActivity.this, activity_homepage.class);
+                        Intent intent = new Intent(MainActivity.this, ScheduleScanner.class);
                         startActivity(intent);
                         Toast.makeText(MainActivity.this, "Login Successful.", Toast.LENGTH_LONG).show();
                     } else
