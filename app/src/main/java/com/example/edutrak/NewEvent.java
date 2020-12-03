@@ -47,7 +47,7 @@ public class NewEvent extends AppCompatActivity {
         });
 
 
-        //Save event data in Firebase on button click
+        //Save event data in Firebase on new_button click
         savebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick (View v) {
