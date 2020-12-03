@@ -53,8 +53,8 @@
             android:id="@+id/editinfo_middleInital"
             android:layout_width="wrap_content"
             android:layout_height="53dp"
-            android:layout_marginStart="112dp"
-            android:layout_marginLeft="112dp"
+            android:layout_marginStart="135dp"
+            android:layout_marginLeft="135dp"
             android:layout_marginTop="29dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/layout_EditFirName">
@@ -71,8 +71,8 @@
             android:id="@+id/layout_Editemail"
             android:layout_width="wrap_content"
             android:layout_height="53dp"
-            android:layout_marginStart="112dp"
-            android:layout_marginLeft="112dp"
+            android:layout_marginStart="135dp"
+            android:layout_marginLeft="135dp"
             android:layout_marginTop="29dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/layout_editinfo_username">
@@ -90,8 +90,8 @@
             android:id="@+id/layout_editinfo_username"
             android:layout_width="wrap_content"
             android:layout_height="53dp"
-            android:layout_marginStart="112dp"
-            android:layout_marginLeft="112dp"
+            android:layout_marginStart="135dp"
+            android:layout_marginLeft="135dp"
             android:layout_marginTop="29dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -101,16 +101,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_baseline_account_circle_24"
-                android:hint=""
-                android:paddingRight="15dp" />
+                android:hint="" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/layout_EditFirName"
             android:layout_width="wrap_content"
             android:layout_height="53dp"
-            android:layout_marginStart="112dp"
-            android:layout_marginLeft="112dp"
+            android:layout_marginStart="135dp"
+            android:layout_marginLeft="135dp"
             android:layout_marginTop="29dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/layout_Editemail">
@@ -128,8 +127,8 @@
             android:id="@+id/editinfo_Lastname"
             android:layout_width="wrap_content"
             android:layout_height="53dp"
-            android:layout_marginStart="112dp"
-            android:layout_marginLeft="112dp"
+            android:layout_marginStart="135dp"
+            android:layout_marginLeft="135dp"
             android:layout_marginTop="29dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editinfo_middleInital">
@@ -147,8 +146,8 @@
             android:id="@+id/editinfo_phoneNumber"
             android:layout_width="wrap_content"
             android:layout_height="53dp"
-            android:layout_marginStart="112dp"
-            android:layout_marginLeft="112dp"
+            android:layout_marginStart="135dp"
+            android:layout_marginLeft="135dp"
             android:layout_marginTop="29dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editinfo_Lastname">
@@ -165,8 +164,8 @@
             android:id="@+id/editinfo_university"
             android:layout_width="wrap_content"
             android:layout_height="53dp"
-            android:layout_marginStart="112dp"
-            android:layout_marginLeft="112dp"
+            android:layout_marginStart="135dp"
+            android:layout_marginLeft="135dp"
             android:layout_marginTop="29dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editinfo_phoneNumber">
@@ -196,8 +195,8 @@
             android:id="@+id/editinfo_classification"
             android:layout_width="wrap_content"
             android:layout_height="53dp"
-            android:layout_marginStart="112dp"
-            android:layout_marginLeft="112dp"
+            android:layout_marginStart="135dp"
+            android:layout_marginLeft="135dp"
             android:layout_marginTop="29dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editinfo_university">

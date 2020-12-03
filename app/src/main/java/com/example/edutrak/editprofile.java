@@ -31,6 +31,7 @@ public class editprofile extends AppCompatActivity {
     String phone = "";
     String university = "";
     String classification = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,14 +56,34 @@ public class editprofile extends AppCompatActivity {
         university = bundle.getString("university");
         classification = bundle.getString("classification");
 
-        username_layout.getEditText().setText("  "+new_username);
-        email_layout.getEditText().setText("  "+email);
-        firstname_layout.getEditText().setText("  "+firstName);
-        middle_layout.getEditText().setText("  "+middleInit);
-        lastname_layout.getEditText().setText("  "+lastName);
-        phone_layout.getEditText().setText("  "+phone);
-        univeristy_layout.getEditText().setText("  "+university);
-        classification_layout.getEditText().setText("  "+classification);
+        username_layout.getEditText().setText(new_username);
+        email_layout.getEditText().setText(email);
+        firstname_layout.getEditText().setText(firstName);
+        middle_layout.getEditText().setText(middleInit);
+        lastname_layout.getEditText().setText(lastName);
+        phone_layout.getEditText().setText(phone);
+        univeristy_layout.getEditText().setText(university);
+        classification_layout.getEditText().setText(classification);
+
+        String check_middleInit = middle_layout.getEditText().getText().toString();
+        if (check_middleInit.isEmpty() || check_middleInit == null) {
+            check_middleInit = "Middle Initial";
+            middle_layout.getEditText().setText(check_middleInit);
+        }
+
+
+        String check_universitylayout = univeristy_layout.getEditText().getText().toString();
+        if (check_universitylayout.isEmpty() || check_universitylayout == null) {
+            check_universitylayout = "University";
+            univeristy_layout.getEditText().setText(check_universitylayout);
+        }
+
+        String check_classifylayout = classification_layout.getEditText().getText().toString();
+        if (check_classifylayout.isEmpty() || check_classifylayout == null) {
+            check_classifylayout = "Classification";
+            classification_layout.getEditText().setText(check_classifylayout);
+        }
+
 
         CancelButton = (Button) findViewById(R.id.new_button);
         CancelButton.setOnClickListener(new View.OnClickListener() {
