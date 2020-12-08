@@ -1,37 +1,37 @@
 # EduTrak - Team 5
 ## Names
-Nathen Paul 
-Email: nathen.paul@mavs.uta.edu
-UTA ID: 1001541594
+Nathen Paul\ 
+Email: nathen.paul@mavs.uta.edu\
+UTA ID: 1001541594\
 
-An Nguygen
-Email: an.nyguen8@mavs.uta.edu
-UTA ID: 1001552004
+An Nguygen\
+Email: an.nyguen8@mavs.uta.edu\
+UTA ID: 1001552004\
 
 
-Yunika Upadhayaya 
-Email: yunika.upadhayaya@mavs.uta.edu
-UTA ID:1001631183
+Yunika Upadhayaya\
+Email: yunika.upadhayaya@mavs.uta.edu\
+UTA ID:1001631183\
 
-Shishir Sunchauri
-Email: shishir.bishwokarma@mavs.uta.edu
-UTA ID: 1001644424
+Shishir Sunchauri\
+Email: shishir.bishwokarma@mavs.uta.edu\
+UTA ID: 1001644424\
 
 ## Point of Contact For Issues
-Nathen Paul 
+Name: Nathen Paul\ 
 Phone Number: 817-999-8397
 
 ### Valid Account for Checking Login/Registration
-Username/Email: projectedutrak@gmail.com
+Username/Email: projectedutrak@gmail.com\
 Password: Edutrak1234$
 
 ## Description
 EduTrak is a time management meant to help students keep track of assignments by creating a to-do list of tasks that need to be completed. Users can manually upload tasks which can then be viewed on both our Calendar UI and List View of tasks. 
 
 ## Technologies Used
-Integrated Development Enviroment --- Android Studio
-Database and Authecation --- Firebase
-Languages --- XML and Java
+Integrated Development Enviroment --- Android Studio\
+Database and Authecation --- Firebase\
+Languages --- XML and Java\
 Collabration and Version Control --- GitHub
 
 ## Exceptions 
@@ -43,12 +43,12 @@ The Schedule Scanner page is partially working. It allows to user to select a pd
 
 # Instatllation
 
-1. Copy the Git Repostitory from Github
+1. Copy the Git Repostitory from Github\
    [Link to our App Git Repostitory](https://github.com/annguyens/EduTrak)
 
-2. Open Android Studio, and open the terminal panel at the bottom.  
-   Type the following command to clone our repository. 
-   
+2. Open Android Studio, and open the terminal panel at the bottom.\  
+   Type the following command to clone our repository.\ 
+ 
    ```
     git clone https://github.com/annguyens/EduTrak.git
    ```
