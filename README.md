@@ -1,28 +1,29 @@
 # EduTrak - Team 5
 ## Names
-Nathen Paul
-Email: nathen.paul@mavs.uta.edu
-UTA ID: 1001541594
 
-An Nguygen
-Email: an.nyguen8@mavs.uta.edu
-UTA ID: 1001552004
+Nathen Paul<br/>
+Email: nathen.paul@mavs.uta.edu<br/>
+UTA ID: 1001541594<br/>
+
+An Nguygen<br/>
+Email: an.nyguen8@mavs.uta.edu<br/>
+UTA ID: 1001552004<br/>
 
 
-Yunika Upadhayaya
-Email: yunika.upadhayaya@mavs.uta.edu
-UTA ID:1001631183
+Yunika Upadhayaya<br/>
+Email: yunika.upadhayaya@mavs.uta.edu<br/>
+UTA ID:1001631183<br/>
 
-Shishir Sunchauri
-Email: shishir.bishwokarma@mavs.uta.edu
-UTA ID: 1001644424
+Shishir Sunchauri<br/>
+Email: shishir.bishwokarma@mavs.uta.edu<br/>
+UTA ID: 1001644424<br/>
 
 ## Point of Contact For Issues
-Name: Nathen Paul 
+Name: Nathen Paul<br/>
 Phone Number: 817-999-8397
 
 ### Valid Account for Checking Login/Registration
-Username/Email: projectedutrak@gmail.com
+Username/Email: projectedutrak@gmail.com<br/>
 Password: Edutrak1234$
 
 ## Description
