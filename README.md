@@ -18,8 +18,9 @@ Email: shishir.bishwokarma@mavs.uta.edu
 UTA ID: 1001644424
 
 ## Point of Contact For Issues
-Nathen Paul
+Nathen Paul 
 Phone Number: 817-999-8397
+
 ### Valid Account for Checking Login/Registration
 Username/Email: projectedutrak@gmail.com
 Password: Edutrak1234$
