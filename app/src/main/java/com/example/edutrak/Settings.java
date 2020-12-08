@@ -103,7 +103,7 @@ public class Settings extends AppCompatActivity {
                             email = documentSnapshot.getString("email");
                             firstName = documentSnapshot.getString("firstName");
                             lastName = documentSnapshot.getString("lastName");
-                            middleInit = documentSnapshot.getString("middleInitial");
+                            middleInit = documentSnapshot.getString("middleIntial");
                             phone = documentSnapshot.getString("phone");
                             university = documentSnapshot.getString("university");
                             classification = documentSnapshot.getString("classification");

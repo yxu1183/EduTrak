@@ -198,7 +198,7 @@ public class activity_registration_next extends AppCompatActivity {
                         }
                     });
 
-                    Intent intent =new Intent(activity_registration_next.this,ScheduleScanner.class);
+                    Intent intent =new Intent(activity_registration_next.this,activity_homepage.class);
                     startActivity(intent);
                 }
                 else

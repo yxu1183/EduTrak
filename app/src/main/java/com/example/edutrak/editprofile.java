@@ -1,16 +1,26 @@
 package com.example.edutrak;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextClock;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class editprofile extends AppCompatActivity {
     Button CancelButton;
@@ -31,6 +41,17 @@ public class editprofile extends AppCompatActivity {
     String phone = "";
     String university = "";
     String classification = "";
+    String getUsername = "";
+    String getEmail = "";
+    String getFirstName = "";
+    String getLastName = "";
+    String getMiddleInit = "";
+    String getPhone = "";
+    String getUniversity = "";
+    String getClassification = "";
+    FirebaseAuth fAuth;
+    FirebaseFirestore fstore;
+    FirebaseUser user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +66,10 @@ public class editprofile extends AppCompatActivity {
         phone_layout = findViewById(R.id.editinfo_phoneNumber);
         univeristy_layout = findViewById(R.id.editinfo_university);
         classification_layout = findViewById(R.id.editinfo_classification);
+
+        fAuth = FirebaseAuth.getInstance();
+        fstore = FirebaseFirestore.getInstance();
+        user = fAuth.getCurrentUser();
 
         Bundle bundle = getIntent().getExtras();
         new_username = bundle.getString("username");
@@ -65,34 +90,38 @@ public class editprofile extends AppCompatActivity {
         univeristy_layout.getEditText().setText(university);
         classification_layout.getEditText().setText(classification);
 
-        String check_middleInit = middle_layout.getEditText().getText().toString();
-        if (check_middleInit.isEmpty() || check_middleInit == null) {
-            check_middleInit = "Middle Initial";
-            middle_layout.getEditText().setText(check_middleInit);
+        getMiddleInit = middle_layout.getEditText().getText().toString();
+        if (getMiddleInit.isEmpty() || getMiddleInit == null) {
+            getMiddleInit = "Middle Initial";
+            middle_layout.getEditText().setText(getMiddleInit);
         }
 
-
-        String check_universitylayout = univeristy_layout.getEditText().getText().toString();
-        if (check_universitylayout.isEmpty() || check_universitylayout == null) {
-            check_universitylayout = "University";
-            univeristy_layout.getEditText().setText(check_universitylayout);
+        getUniversity = univeristy_layout.getEditText().getText().toString();
+        if (getUniversity.isEmpty() || getUniversity == null) {
+            getUniversity = "University";
+            univeristy_layout.getEditText().setText(getUniversity);
         }
 
-        String check_classifylayout = classification_layout.getEditText().getText().toString();
-        if (check_classifylayout.isEmpty() || check_classifylayout == null) {
-            check_classifylayout = "Classification";
-            classification_layout.getEditText().setText(check_classifylayout);
+        getClassification = classification_layout.getEditText().getText().toString();
+        if (getClassification.isEmpty() || getClassification == null) {
+            getClassification = "Classification";
+            classification_layout.getEditText().setText(getClassification);
         }
 
+        getUsername = username_layout.getEditText().getText().toString();
+        getFirstName = firstname_layout.getEditText().getText().toString();
+        getLastName = lastname_layout.getEditText().getText().toString();
+        getEmail = email_layout.getEditText().getText().toString();
+        getPhone = phone_layout.getEditText().getText().toString();
 
         CancelButton = (Button) findViewById(R.id.new_button);
         CancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(editprofile.this, ScheduleScanner
+                Toast.makeText(editprofile.this, "Cancelled!", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(editprofile.this, Settings
                         .class);
                 startActivity(intent);
-                Toast.makeText(editprofile.this, "Cancelled!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -100,9 +129,73 @@ public class editprofile extends AppCompatActivity {
         changeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(editprofile.this, ScheduleScanner
-                        .class);
-                startActivity(intent);
+                getUsername = username_layout.getEditText().getText().toString();
+                getFirstName = firstname_layout.getEditText().getText().toString();
+                getLastName = lastname_layout.getEditText().getText().toString();
+                getEmail = email_layout.getEditText().getText().toString();
+                getPhone = phone_layout.getEditText().getText().toString();
+                getMiddleInit = middle_layout.getEditText().getText().toString();
+                getUniversity = univeristy_layout.getEditText().getText().toString();
+                getClassification = classification_layout.getEditText().getText().toString();
+                if (getUsername.isEmpty() || getFirstName.isEmpty()|| getLastName.isEmpty() || getEmail.isEmpty() || getPhone.isEmpty())
+                {
+                    Toast.makeText(editprofile.this, "One or many fields are empty.", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(!Patterns.EMAIL_ADDRESS.matcher(getEmail).matches())
+                {
+                    Toast.makeText(editprofile.this, "Invalid Email Address!", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(!Patterns.PHONE.matcher(getPhone).matches())
+                {
+                    Toast.makeText(editprofile.this, "Invalid Phone Number!", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if(getUsername.length() >= 16)
+                {
+                    Toast.makeText(editprofile.this, "Username too long!", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                if (getFirstName.length() <= 1 || getLastName.length() <= 1)
+                {
+                    Toast.makeText(editprofile.this, "First Name or Last Name too short!", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                user.updateEmail(getEmail).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        DocumentReference docRef = fstore.collection("users").document(user.getUid());
+                        Map<String, Object> edited = new HashMap<>();
+                        edited.put("username",getUsername);
+                        edited.put("email",getEmail);
+                        edited.put("firstName",getFirstName);
+                        edited.put("lastName",getLastName);
+                        if (getMiddleInit == "Middle Initial")
+                        {
+                            getMiddleInit = "";
+                        }
+                        edited.put("middleIntial",getMiddleInit);
+                        edited.put("phone",getPhone);
+                        if(getUniversity == "University")
+                        {
+                            getUniversity = "";
+                        }
+                        edited.put("university",getUniversity);
+                        if (getClassification == "Classification")
+                        {
+                            getClassification = "";
+                        }
+                        edited.put("classification",getClassification);
+                        docRef.update(edited);
+                        Toast.makeText(editprofile.this, "Edited fields are changed.",Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(editprofile.this,e.getMessage(),Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 
