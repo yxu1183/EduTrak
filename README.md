@@ -29,10 +29,10 @@ Password: Edutrak1234$
 EduTrak is a time management meant to help students keep track of assignments by creating a to-do list of tasks that need to be completed. Users can manually upload tasks which can then be viewed on both our Calendar UI and List View of tasks. 
 
 ## Technologies Used
--Integrated Development Enviroment --- Android Studio
--Database and Authecation --- Firebase
--Languages --- XML and Java
--Collabration and Version Control --- GitHub
+- Integrated Development Enviroment --- Android Studio
+- Database and Authecation --- Firebase
+- Languages --- XML and Java
+- Collabration and Version Control --- GitHub
 
 ## Exceptions 
 ### Compotents Not Included
