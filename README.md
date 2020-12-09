@@ -1,4 +1,5 @@
 # EduTrak - Team 5
+![alt text](app/src/main/res/drawable-v24/logo.png "EduTrak")<br/>
 ## Names
 
 Nathen Paul<br/>
@@ -37,7 +38,7 @@ EduTrak is a time management meant to help students keep track of assignments by
 
 ## Exceptions 
 ### Compotents Not Included
-Some Compotents included in our inital Test Plan that are not implemented in our app include the Search feature for looking up tasks and the Automated Help Chatbot. 
+Some Compotents included in our inital Test Plan that was not implemented in our app include the Search feature for looking up tasks, Automated Help Chatbot, and Reminders/Notifications. 
 
 ### Partial Functionality 
 The Schedule Scanner page is partially working. It allows to user to select a pdf file from their local storage and show the file path. However, the functionality to scan the selected file and upload the info from the pdf to the Calendar UI has not been implemented yet. 
@@ -54,7 +55,10 @@ The Schedule Scanner page is partially working. It allows to user to select a pd
     git clone https://github.com/annguyens/EduTrak.git
    ```
  
-3. Once cloned, you can now run our app. You can either run with a built-in emulator in Android Studio or have your own Android Smartphone connected your device that is running Android Studio and view from there. 
+3. Once cloned, you can now run our app. __Please run the app either on the Pixel 4 Emulator__ in Android Studio or have your own Android Smartphone connected to a computer that is running Android Studio, you will be able to view from there as well. 
+
+
+
 
 
 
