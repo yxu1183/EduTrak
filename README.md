@@ -55,7 +55,7 @@ The Schedule Scanner page is partially working. It allows to user to select a pd
     git clone https://github.com/annguyens/EduTrak.git
    ```
  
-3. Once cloned, you can now run our app. __Please run the app either on the Pixel 4 Emulator__ in Android Studio or have your own Android Smartphone connected to your computer that is running Android Studio, you will be able to view from there as well. 
+3. Once cloned, you can now run our app. __Please run the app either on the Pixel 4 Emulator__ in Android Studio or have your own Android Smartphone connected to a computer that is running Android Studio, you will be able to view from there as well. 
 
 
 
