@@ -3,7 +3,12 @@ package com.example.edutrak;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -32,7 +37,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
-
+    Button enable ; //here
     FirebaseAuth fAuth;
     public TextView textview;
     public TextView forgot_paswword;
@@ -45,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+
 
         fAuth = FirebaseAuth.getInstance();
 
@@ -155,6 +164,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+
     private boolean validateEmail() {
         String input_email = textemail.getEditText().getText().toString().trim();
 
@@ -202,7 +213,11 @@ public class MainActivity extends AppCompatActivity {
             });
 
         }
+
+
+
     }
+
 }
 
 

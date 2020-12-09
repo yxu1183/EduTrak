@@ -128,5 +128,17 @@ public class Settings extends AppCompatActivity {
                 });
             }
         });
+
+        Button AfM = findViewById(R.id.notifictions_button);
+        AfM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent = new Intent(Settings.this, after_manage
+                        .class);
+                startActivity(intent);
+            }
+        });
     }
 }
