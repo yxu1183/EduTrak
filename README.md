@@ -1,4 +1,5 @@
 # EduTrak - Team 5
+![alt text](app/src/main/res/drawable-v24/logo.png "EduTrak")<br/>
 ## Names
 
 Nathen Paul<br/>
