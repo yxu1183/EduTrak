@@ -43,7 +43,7 @@ Some Compotents included in our inital Test Plan that was not implemented in our
 ### Partial Functionality 
 The Schedule Scanner page is partially working. It allows to user to select a pdf file from their local storage and show the file path. However, the functionality to scan the selected file and upload the info from the pdf to the Calendar UI has not been implemented yet. In addition, Reminders and Notifications are not full functional yet either. 
 
-# Instatllation
+# Installation
 
 1. Copy the Git Repostitory from Github
    [Link to our App Git Repostitory](https://github.com/annguyens/EduTrak)
